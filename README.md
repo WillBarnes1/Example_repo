@@ -1,72 +1,53 @@
-# TNP Typst Presentation Template
+# Git Practice Repo
 
-This repository is a minimal GitHub template for a single Typst presentation.
+A simple repository for practising a full Git workflow — clone, branch, edit, commit, push, and open a pull request.
 
-It includes the shared TNP theme as a committed Git submodule at `vendor/tnp-theme`, pinned to tag `0.1.0`.
+## The workflow
 
-## Repository URLs
+Work through these steps one at a time. Ask for help any time you get stuck!
 
-Template repository:
-
-- HTTPS: `https://github.com/true-north-partners-common/typst_starter.git`
-- SSH: `git@github.com:true-north-partners-common/typst_starter.git`
-
-Theme repository:
-
-- HTTPS: `https://github.com/true-north-partners-common/typst_template.git`
-- SSH: `git@github.com:true-north-partners-common/typst_template.git`
-
-The committed submodule uses the relative URL `../typst_template.git` in `.gitmodules`. That is intentional: when someone clones a repository created from this template over HTTPS, the submodule resolves over HTTPS; when they clone over SSH, the submodule resolves over SSH.
-
-## Use it
-
-1. Create a new repository with GitHub's `Use this template`.
-2. Clone your new repository with submodules:
-
-   ```bash
-   git clone --recurse-submodules <your-repo-url>
-   ```
-
-   If you already cloned it:
-
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-3. Edit `main.typ`.
-4. Put deck-specific images in `assets/`.
-5. Build the deck:
-
-   ```bash
-   mkdir -p dist
-   typst compile main.typ dist/presentation.pdf
-   ```
-
-6. Optional browser presenter output:
-
-   ```bash
-   uvx touying compile main.typ --format html --output dist/presentation.html
-   ```
-
-## Template contents
-
-- `main.typ`: starter presentation source
-- `assets/`: presentation-specific images
-- `vendor/tnp-theme`: pinned shared theme submodule
-
-## Updating the theme
-
-To move this template to a newer theme tag:
+### 1. Clone the repository
 
 ```bash
-git -C vendor/tnp-theme fetch --tags
-git -C vendor/tnp-theme checkout <tag>
-git add vendor/tnp-theme
-git commit -m "chore(theme): update tnp-theme"
+git clone https://github.com/WillBarnes1/Example_repo.git
+cd Example_repo
 ```
 
-## GitHub setup
+### 2. Create a new branch
 
-After pushing this repository, enable `Template repository` in GitHub settings.
+Always make changes on a branch, not directly on `main`.
 
-Reference: [GitHub Docs: Creating a template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
+```bash
+git checkout -b your-name/my-first-change
+```
+
+Replace `your-name` with your name, e.g. `alice/my-first-change`.
+
+### 3. Edit the code
+
+Open `hello.py` and make a small change — for example, update the greeting message or add your name to the list.
+
+### 4. Stage and commit your change
+
+```bash
+git add hello.py
+git commit -m "Update greeting in hello.py"
+```
+
+### 5. Push your branch to GitHub
+
+```bash
+git push -u origin your-name/my-first-change
+```
+
+### 6. Open a pull request
+
+1. Go to the repository on GitHub: <https://github.com/WillBarnes1/Example_repo>
+2. You should see a banner suggesting you open a pull request for your recently pushed branch — click **Compare & pull request**.
+3. Add a short description of what you changed and click **Create pull request**.
+
+That's it! Your reviewer will look at the changes and either approve them or leave comments for you to address.
+
+## Files
+
+- `hello.py` — a simple Python script to edit as part of this exercise
