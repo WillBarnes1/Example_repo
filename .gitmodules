@@ -1,0 +1,3 @@
+[submodule "vendor/tnp-theme"]
+	path = vendor/tnp-theme
+	url = ../typst_template.git

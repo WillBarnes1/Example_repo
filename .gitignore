@@ -1,0 +1,9 @@
+# Build output
+dist/
+*.pdf
+*.html
+*.pptx
+*.svg
+
+# macOS
+.DS_Store
